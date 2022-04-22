@@ -1,8 +1,9 @@
-from django.urls import path
+from django.urls import path, re_path
 
 from .views import *
 
 #
 urlpatterns = [
-    path('', index),
+    path('', index, name='home'),  # home - для "динамического" редиректа (хардкод осуждаю)
+    path('article/<int:article>', articles)
 ]
